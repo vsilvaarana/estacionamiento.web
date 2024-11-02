@@ -21,7 +21,7 @@ loginForm = this.fb.group({
 __onAcceder(){
   if(this.loginForm.valid){
     console.log(this.loginForm.value)
-    // this.router.navigate(["team"])
+    this.router.navigate(["home"])
   }else{
     alert("Usuario no valido")
   }
