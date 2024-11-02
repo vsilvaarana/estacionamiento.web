@@ -1,0 +1,10 @@
+<div class="login-dark" style="background-image: url(&quot;assets/img/backgrounds/entel.jpg&quot;);">
+    <form method="post" [formGroup]="loginForm" style="border: 2px solid rgba(26, 26, 107, 0.877); background-color: rgba(255, 255, 255, 0.678);">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline" style="color: rgb(226, 137, 60);"></i></div>
+        <div class="form-group"><input class="form-control" type="email" formControlName="email" placeholder="Email" autocomplete="off" style="color: black;"></div>
+        <div class="form-group"><input class="form-control" type="password" formControlName="password" placeholder="Password" autocomplete="off" style="color: black;"></div>
+        <div class="form-group"><button (click)="__onAcceder()"  class="btn btn-primary btn-block" routerLink="./team" type="submit" style="background-color: rgb(226, 137, 60);font-weight: normal;">Ingresar</button></div>
+    </form>
+</div>
+
