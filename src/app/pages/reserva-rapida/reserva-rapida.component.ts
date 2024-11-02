@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './reserva-rapida.component.html',
   styleUrl: './reserva-rapida.component.css'
 })
-export class ReservaRapidaComponent {
-
+export class Reserva_RapidaComponent{
+  
 }
