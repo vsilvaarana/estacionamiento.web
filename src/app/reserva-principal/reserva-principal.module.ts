@@ -5,6 +5,7 @@ import { ReservaEmpleadoDetalleComponent } from './reserva-empleado-detalle/rese
 import { ReservaRoutingModule } from './reserva-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ReservaEmpleadoTablaComponent } from './reserva-empleado-tabla/reserva-empleado-tabla.component';
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -15,8 +16,10 @@ import { ReservaEmpleadoTablaComponent } from './reserva-empleado-tabla/reserva-
   imports: [
     CommonModule,
     ReservaRoutingModule,
-    FormsModule
-  ],
+    FormsModule,
+    SharedModule
+    
+],
   providers: []
 })
 export class ReservaPrincipalModule { }
