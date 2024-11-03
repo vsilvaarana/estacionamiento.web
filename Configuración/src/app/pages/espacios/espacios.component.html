@@ -1,0 +1,126 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Barra lateral -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar" >
+            <div class="sidebar-sticky">
+                <h4 class="text-white p-3">Eduardo Ramos</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="espacios">Nueva Reserva</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Reserva Rapida</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Mis Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Configuración</a>
+                        <ul class="nav flex-column ml-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div class="col-6">
+                    <select class="form-control-sm" style="color: rgb(0,0,0);">
+                        <option value="12">Piso 1</option>
+                        <option value="14">Piso 2</option>
+                        <option value="14">Piso 3</option>
+                    </select>
+                </div>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button class="btn btn-sm btn-outline-secondary">Log out</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de detalles de perfil y plantillas -->
+            <div >
+                <!-- Detalles de perfil -->
+                <div class=" row col-md-12">
+                    <div class="card col-md-10">
+                                              
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 pt-4">Seleccione un lugar</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 pt-4"></div>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:lightblue;">Estacionamiento 1</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:lightblue;">Estacionamiento 2</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:green;">Estacionamiento 3</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 pt-4"></div>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:grey;">Estacionamiento 4</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:grey;">Estacionamiento 5</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:grey;">Estacionamiento 6</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 pt-4"></div>
+                            </div>
+                            <div class="row">
+                                <button (click)="__separar()" class="btn btn-sm btn-primary col-md-3" style="background-color:green;">Estacionamiento 7</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:green;">Estacionamiento 8</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:grey;">Estacionamiento 9</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 pt-4"></div>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:grey;">Estacionamiento 10</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:grey;">Estacionamiento 11</button>
+                                <div class="col-md-1"></div>
+                                <button class="btn btn-sm btn-primary col-md-3" style="background-color:green;">Estacionamiento 12</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div style="background-color: lightblue; text-align: center; border-radius: 5px; padding: 10px; margin: 10px;"> Discapacitados </div>
+                        <div style="background-color: green; text-align: center; border-radius: 5px; padding: 10px; margin: 10px;"> Disponible </div>
+                        <div style="background-color: grey; text-align: center; border-radius: 5px; padding: 10px; margin: 10px;"> Reservados </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </main>
+        
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="profile-container" style="text-align: center;">
+    <div class="image-upload">
+        <img src="assets/img/car-placeholder.png" alt="Subir imagen de vehículo" class="car-image">
+        <button type="button" (click)="uploadImage()" class="btn btn-upload">Subir Imagen</button>
+    </div>
+
+    <div class="user-info">
+        <p><strong>Usuario :</strong> ID47173621</p>
+        
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" type="text" id="nombre" formControlName="nombre">
+            </div>
+            
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input class="form-control" type="text" id="apellido" formControlName="apellido">
+            </div>
+            
+            <div class="form-group">
+                <label for="dni">DNI:</label>
+                <input class="form-control" type="text" id="dni" formControlName="dni">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input class="form-control" type="email" id="correo" formControlName="correo">
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input class="form-control" type="text" id="marca" formControlName="marca">
+            </div>
+
+            <div class="form-group">
+                <label for="placa">Placa:</label>
+                <input class="form-control" type="text" id="placa" formControlName="placa">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Cambiar Contraseña:</label>
+                <input class="form-control" type="password" id="password" formControlName="password">
+            </div>
+
+            <button type="submit" class="btn btn-save">GUARDAR</button>
+        </form>
+    </div>
+</div>

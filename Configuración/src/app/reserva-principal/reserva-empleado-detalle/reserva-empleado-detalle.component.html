@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">      
+        <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar" >
+            <app-menu></app-menu>
+        </nav>        
+
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h2>Mis reservas</h2>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+                <div class="input-group gap-3">
+                    <label class="card-text"> Desde:</label>                             
+                    <input type="date" id="fechaInicio">
+                </div>
+                <div class="input-group gap-3" >
+                    <label class="card-text"> Hasta:</label>                             
+                    <input type="date" id="fechaFin">
+                </div>
+                <div class="input-group gap-3">
+                    <label> Estado:</label>                
+                    <select class="form-control-sm" style="color: rgb(0,0,0);">
+                        <option value="0">Todos</option>
+                        <option value="1">Vigentes</option>
+                        <option value="2">Concluidos</option>                        
+                    </select>
+                </div>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button class="btn btn-sm btn-outline-secondary">Buscar</button>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="row col-md-12">                     
+                    <app-reserva-empleado-tabla [reservasEmpleado]="reservasEmpleado"></app-reserva-empleado-tabla>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

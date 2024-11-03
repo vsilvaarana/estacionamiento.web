@@ -1,0 +1,23 @@
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark" style="background-color: green">
+            <tr>
+                <th scope="col" class="col-2">Estacionamiento</th>
+                <th scope="col" class="col-2">Espacio</th>
+                <th scope="col" class="col-2">Placa</th>
+                <th scope="col" class="col-3">Fecha</th>
+                <th scope="col" class="col-3">Estado</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let reservasEmpleado of reservasEmpleado">
+            <td>{{reservasEmpleado.estacionamiento}}</td>
+            <td>{{reservasEmpleado.espacio}}</td>
+            <td>{{reservasEmpleado.placa}}</td>
+            <td>{{reservasEmpleado.fecha}}</td>
+            <td>{{reservasEmpleado.estado}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  
