@@ -4,12 +4,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 
 import { Reserva_RapidaComponent } from './pages/reserva-rapida/reserva-rapida.component';
+import { NuevaReservaComponent } from './pages/nueva-reserva/nueva-reserva.component';
 
 
 export const routes: Routes = [
     {path: "login", component: LoginComponent},
     {path: "reserva_rapida", component: Reserva_RapidaComponent},
     {path: "home", component: HomeComponent},
+    {path: "nueva_reserva", component: NuevaReservaComponent},
 
     {path: "", redirectTo: "login", pathMatch: "full"}
 ];
