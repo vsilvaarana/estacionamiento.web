@@ -55,14 +55,14 @@
             <div class="row">
                 
                 <div class="col-md-9">
-                    <div class="card">
+                    <div class="card col-md-12">
                         <h2> Espacio 7</h2>
                         <div class="card-body">
                             
                             <img src="assets/img/estacionamiento2.jpg" alt="estacionamiento" class="col-md-10"  >
                         </div>
                             
-                        <div class="row">
+                        <div class="row col-md-9"  >
                             <h2> Datos de la Reserva</h2>
                             <div class="col-md-6">
                                 <p>Usuario: Eduardo Ramos</p>
@@ -85,11 +85,12 @@
                             </div>
                             
                             <div class="col-md-6">
-                                <img src="assets/img/auto1.jpg" alt="auto" style="border-radius: 10px;">
+                                <img src="assets/img/auto1.jpg" alt="auto" class="img-fluid" style="border-radius: 10px;">
                             </div>
                             <p> </p>
-                            <button class="btn btn-sm btn-primary" (click)="__onReservar()" >Reservar</button>
+                            
                         </div>
+                        <button class="btn btn-sm btn-primary col-md-3" (click)="__onReservar()" >Reservar</button>
                     </div>
                 </div>
              
