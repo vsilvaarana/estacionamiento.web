@@ -12,7 +12,11 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   constructor(
     private fb: FormBuilder,
-    private router: Router) {}
+
+    private router: Router
+
+  ) {}
+
 
   loginForm = this.fb.group({
     email: ["", [Validators.required]],  // Eliminamos Validators.email para permitir texto libre
@@ -30,7 +34,11 @@ export class LoginComponent {
     } else {
       alert("Usuario no válido");
     }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 41212b3e97f6fb12e41d8301be3cbc6a233f4508
   }
 }
 
