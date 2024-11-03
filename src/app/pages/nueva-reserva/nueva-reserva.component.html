@@ -1,43 +1,107 @@
-<div class="container-fluid">
-    <div class="row">
-    <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
-        <div class="sidebar-sticky">
-            <h4 class="text-white p-3">Eduardo Ramos</h4>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="nueva_reserva">Nueva Reserva</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Reserva Rapida</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Mis Reservas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Configuración</a>
-                    <ul class="nav flex-column ml-3">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
-                        </li>
-                    </ul>
-                </li>
+   
+
+    <div class="container-fluid">
+        <div class="row">
+        <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+            <div class="sidebar-sticky">
+                <h4 class="text-white p-3">Eduardo Ramos</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Nueva Reserva</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Reserva Rapida</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Mis Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Configuración</a>
+                        <ul class="nav flex-column ml-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Agregar Vehiculo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h2>Luis Perez Diaz</h2>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button class="btn btn-sm btn-outline-secondary">Log out</button>
+                    </div>
+                </div>
+            </div>
+             
+            <div class="row">
                 
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Ayuda</a>
-                </li>
-            </ul>
+                <div class="col-md-9">
+                    <div class="card">
+                        <h2> Espacio 1</h2>
+                        <div class="card-body">
+                            <div class="col-md-2"></div>
+                            <img src="assets/img/estacionamiento.jpg" alt="estacionamiento" class="col-md-10"  >
+                            <p class="card-text">Placa:</p>
+
+                            <div class="col-6"><select class="form-control-sm" style="color: rgb(0,0,0);"><option value="12">AQW-123</option><option value="14">ASD-456</option></select></div>
+                            <p> </p>
+                            <p class="card-text"> Fecha de Reserva :</p>
+                         
+                                <input type="date" id="fechaSeleccionada">
+
+                                
+
+                        <p id="resultado"></p>
+
+                            <script>
+                            function mostrarFecha() {
+                                const fecha = document.getElementById('fechaSeleccionada').value;
+                            document.getElementById('resultado').textContent = "Fecha seleccionada: " + fecha;
+                                }
+                            </script>
+                            <p> </p>
+                            
+                            <button class="btn btn-sm btn-primary">Reservar</button>
+                        </div>
+                    </div>
+                    
+                </div>
+    
+                <!-- Sección de plantillas -->
+                <div class="col-md-3" >
+                    <div>
+                        <div class="card">
+                                <div class="card-body">
+                                    <img src="assets/img/entelchica.jpg" alt="chica entel" class="img-fluid" style="max-height: 500px; width: auto;"  >
+                                </div>
+                             
+        
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </main>
         </div>
-    </nav>
-</div>
+    </div>
+    
+
+

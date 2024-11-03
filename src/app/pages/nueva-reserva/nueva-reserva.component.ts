@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-nueva-reserva',
@@ -8,5 +11,5 @@ import { Component } from '@angular/core';
   styleUrl: './nueva-reserva.component.css'
 })
 export class NuevaReservaComponent {
-
-}
+  
+  }
