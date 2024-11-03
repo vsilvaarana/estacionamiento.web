@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { Reserva_RapidaComponent } from './pages/reserva-rapida/reserva-rapida.component';
 import { NuevaReservaComponent } from './pages/nueva-reserva/nueva-reserva.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 export const routes: Routes = [
@@ -12,6 +13,6 @@ export const routes: Routes = [
     {path: "reserva_rapida", component: Reserva_RapidaComponent},
     {path: "home", component: HomeComponent},
     {path: "nueva_reserva", component: NuevaReservaComponent},
-
+    {path: "register", component: RegisterComponent},
     {path: "", redirectTo: "login", pathMatch: "full"}
 ];
