@@ -16,5 +16,9 @@ export const routes: Routes = [
     {path: "espacios", component: EspaciosComponent},
     {path: "nueva_reserva", component: NuevaReservaComponent},
     {path: "register", component: RegisterComponent},
-    {path: "", redirectTo: "login", pathMatch: "full"}
+    {path: "", redirectTo: "login", pathMatch: "full"},
+    {
+        path: "reservaprincipal",
+        loadChildren: ()=>import('./reserva-principal/reserva-principal.module').then(m=>m.ReservaPrincipalModule)
+    }
 ];
