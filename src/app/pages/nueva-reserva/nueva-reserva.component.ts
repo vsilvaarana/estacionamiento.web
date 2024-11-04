@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SharedModule } from "../../shared/shared.module";
 
 
 @Component({
   selector: 'app-nueva-reserva',
   standalone: true,
-  imports: [],
+  imports: [SharedModule],
   templateUrl: './nueva-reserva.component.html',
   styleUrl: './nueva-reserva.component.css'
 })

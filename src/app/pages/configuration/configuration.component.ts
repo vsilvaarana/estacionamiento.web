@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SharedModule } from "../../shared/shared.module";
 
 @Component({
   selector: 'app-configuration',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, SharedModule],
   templateUrl: './configuration.component.html',
   styleUrl: './configuration.component.css'
 })

@@ -24,4 +24,6 @@ export const routes: Routes = [
         path: "reservaprincipal",
         loadChildren: ()=>import('./reserva-principal/reserva-principal.module').then(m=>m.ReservaPrincipalModule)
     }
+
+    
 ];
