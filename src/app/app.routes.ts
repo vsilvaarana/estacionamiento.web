@@ -8,10 +8,12 @@ import { NuevaReservaComponent } from './pages/nueva-reserva/nueva-reserva.compo
 import { RegisterComponent } from './pages/register/register.component';
 import { EspaciosComponent } from './pages/espacios/espacios.component';
 import { ConfigurationComponent } from './pages/configuration/configuration.component';
+import { RecuperarComponent } from './pages/recuperar/recuperar.component';
 
 
 export const routes: Routes = [
     {path: "login", component: LoginComponent},
+    {path: "recuperar", component: RecuperarComponent},
     {path: "reserva_rapida", component: Reserva_RapidaComponent},
     {path: "home", component: HomeComponent},
     {path: "espacios", component: EspaciosComponent},
