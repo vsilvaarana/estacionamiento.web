@@ -35,4 +35,8 @@ export class RecuperarComponent {
     }
 
   }
+
+  __volver() {
+    this.router.navigate(["/login"]);
+  }
 }

@@ -36,4 +36,8 @@ export class RegisterComponent {
       alert("Falta llenar campos");
     }
   }
+
+  __volver() {
+    this.router.navigate(["/login"]);
+  }
 }
