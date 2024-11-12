@@ -5,8 +5,6 @@ import { ReservaService } from '../../services/reserva.service';
 
 @Component({
   selector: 'app-reserva-empleado-detalle',
-  //standalone: true,
-  //imports: [],
   templateUrl: './reserva-empleado-detalle.component.html',
   styleUrl: './reserva-empleado-detalle.component.css'
 })
@@ -15,22 +13,33 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
 
   constructor(
     private  activedRoute: ActivatedRoute,
-    private reservaService: ReservaService
-  ){
+    private readonly reservaService: ReservaService
+  ){}
 
-  }
+  listar(){
+    this.reservaService.obtenerReservasEmpleado(1).subscribe((rest: any) => {
+      this.reservasEmpleado = rest
+      console.log(this.reservasEmpleado)
+    })
+   }
+
 
   ngOnInit(): void {
+
+    this.listar()
+
+    /*
     this.activedRoute.params.subscribe(
       params=>{
         console.log(params["id"])
         this.reservaService.obtenerReservasEmpleado(params["id"]).subscribe(
           result=>{
             this.reservasEmpleado = result
+
           }
         )
       }
     )
-    //linea de codigo
+*/
   }
 }

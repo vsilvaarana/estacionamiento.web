@@ -1,13 +1,30 @@
 import { Injectable } from '@angular/core';
 import { ReservaEmpleadoDetalle } from '../models/reserva-empleado-detalle';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservaService {
-  reservasEmpleado: ReservaEmpleadoDetalle[] =[
-    {
+  reservasEmpleado: ReservaEmpleadoDetalle[] =[]
+
+  constructor(
+    private readonly http: HttpClient
+  ) { }
+
+  //: Observable<ReservaEmpleadoDetalle[]> 
+  obtenerReservasEmpleado(empleadoid: number){
+    //return of(this.reservasEmpleado)
+    return this.http.get("https://localhost:7167/api/Reserva/ListarPorEmpleado?empleadoId=1", {responseType: "json"})
+  }
+
+
+
+}
+
+/*
+{
       estacionamiento: 'E1',
       espacio: '1',
       placa: 'ABC-123',
@@ -35,11 +52,4 @@ export class ReservaService {
       fecha: '2024-10-30',
       estado: 'Concluido'
     }
-  ]
-
-  constructor() { }
-
-  obtenerReservasEmpleado(empleadoid: number): Observable<ReservaEmpleadoDetalle[]> {
-    return of(this.reservasEmpleado)
-  }
-}
+      */
