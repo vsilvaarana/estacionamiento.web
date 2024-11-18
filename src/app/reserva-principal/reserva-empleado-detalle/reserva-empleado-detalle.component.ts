@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReservaEmpleadoDetalle } from '../../models/reserva-empleado-detalle';
 import { ReservaService } from '../../services/reserva.service';
+import { FiltrosReservaModel } from '../../models/filtros-reserva-model';
 
 @Component({
   selector: 'app-reserva-empleado-detalle',
@@ -10,6 +11,13 @@ import { ReservaService } from '../../services/reserva.service';
 })
 export class ReservaEmpleadoDetalleComponent  implements OnInit {
   reservasEmpleado: ReservaEmpleadoDetalle[] = []
+  empleadoId: string = ""
+  filtrosReservaModel: FiltrosReservaModel = {
+    fecha_inicio: '',
+    fecha_fin: '',
+    tipo: '',
+    empleadoId: ''
+  }
 
   constructor(
     private  activedRoute: ActivatedRoute,
@@ -17,10 +25,22 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
   ){}
 
   listar(){
-    this.reservaService.obtenerReservasEmpleado(1).subscribe((rest: any) => {
+    this.activedRoute.params.subscribe(
+      params => {this.filtrosReservaModel.empleadoId = params["id"] }
+    )
+
+    this.reservaService.obtenerReservasEmpleado(this.filtrosReservaModel).subscribe((rest: any) => {
       this.reservasEmpleado = rest
       console.log(this.reservasEmpleado)
     })
+   }
+
+   registrar(){}
+
+   buscar()
+   {    
+
+    alert('hi' + this.filtrosReservaModel.fecha_inicio + ' ' + this.filtrosReservaModel.tipo);
    }
 
 

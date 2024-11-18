@@ -3,25 +3,25 @@
                         
         <h1 style="text-align: center; color: rgba(22, 19, 207, 0.459);">Register</h1>
         <div class="form-group">
-            <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre" autocomplete="off" style="color: black;">
+            <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.nombre">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" formControlName="apellidos" placeholder="Apellidos" autocomplete="off" style="color: black;">
+            <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.apellido">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" formControlName="dni" placeholder="Dni" autocomplete="off" style="color: black;">
+            <input class="form-control" type="text" formControlName="dni" placeholder="Dni" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.dni">
         </div>        
         <div class="form-group">
-            <input class="form-control" type="text" formControlName="email" placeholder="Email" autocomplete="off" style="color: black;">
+            <input class="form-control" type="text" formControlName="email" placeholder="Email" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.email">
+        </div>
+       <!-- <div class="form-group">
+            <input class="form-control" type="password" formControlName="password" placeholder="Password" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.password">
+        </div>-->
+        <div class="form-group">
+            <input class="form-control" type="text" formControlName="marca" placeholder="Marca" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.marca">
         </div>
         <div class="form-group">
-            <input class="form-control" type="password" formControlName="password" placeholder="Password" autocomplete="off" style="color: black;">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="text" formControlName="marca" placeholder="Marca" autocomplete="off" style="color: black;">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="text" formControlName="placa" placeholder="Placa" autocomplete="off" style="color: black;">
+            <input class="form-control" type="text" formControlName="placa" placeholder="Placa" autocomplete="off" style="color: black;" [(ngModel)]="usuarioModel.placa">
         </div>
         <div class="form-group">
             <button (click)="__registrar()" class="btn btn-primary btn-block" type="submit" style="background-color: rgb(226, 137, 60); font-weight: normal;">Registrar</button>
