@@ -13,10 +13,10 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
   reservasEmpleado: ReservaEmpleadoDetalle[] = []
   empleadoId: string = ""
   filtrosReservaModel: FiltrosReservaModel = {
-    fecha_inicio: '',
-    fecha_fin: '',
-    tipo: '',
-    empleadoId: ''
+    fecha_inicio: "",
+    fecha_fin: "",
+    tipo: "",
+    empleadoId: ""
   }
 
   constructor(
@@ -26,10 +26,10 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
 
   listar(){
     this.activedRoute.params.subscribe(
-      params => {this.filtrosReservaModel.empleadoId = params["id"] }
+      params => {this.filtrosReservaModel.empleadoId = "1" } //params["id"]
     )
 
-    this.reservaService.obtenerReservasEmpleado(this.filtrosReservaModel).subscribe((rest: any) => {
+    this.reservaService.obtenerReservasUsuario(this.filtrosReservaModel).subscribe((rest: any) => {
       this.reservasEmpleado = rest
       console.log(this.reservasEmpleado)
     })
@@ -39,8 +39,9 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
 
    buscar()
    {    
+    this.listar()
 
-    alert('hi' + this.filtrosReservaModel.fecha_inicio + ' ' + this.filtrosReservaModel.tipo);
+    //alert('hi' + this.filtrosReservaModel.fecha_inicio + ' ' + this.filtrosReservaModel.tipo);
    }
 
 

@@ -1,6 +1,6 @@
 export interface ReservaEmpleadoDetalle {
-    //estacionamiento: string;
-    //espacio: string;
+    reservaid: number;
+    espacio: string;
     placa:string;
     fecha:string;
     estado:string;

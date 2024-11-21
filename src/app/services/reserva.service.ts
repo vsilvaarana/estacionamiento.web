@@ -16,9 +16,11 @@ export class ReservaService {
   ) { }
 
   //: Observable<ReservaEmpleadoDetalle[]> 
-  obtenerReservasEmpleado(reserva: FiltrosReservaModel){
+  obtenerReservasUsuario(reserva: FiltrosReservaModel){
     //return of(this.reservasEmpleado)
-    var url = this.dominio + "ListarPorEmpleado?empleadoId=" +  reserva.empleadoId + "&fechainicio=" + reserva.fecha_inicio + "&fechafin=" + reserva.fecha_fin + "&tipo=" + reserva.tipo
+    var url = this.dominio + "ListarPorUsuario?usuarioId=" +  reserva.empleadoId + "&fechainicio=" + reserva.fecha_inicio + "&fechafin=" + reserva.fecha_fin + "&tipo=" + reserva.tipo
+    
+    console.log(url)
     return this.http.get(url, {responseType: "json"})
   }
 
