@@ -15,4 +15,19 @@ export class UsuarioService {
     
     return this.http.post<number>(this.dominio, usuarioModel)
   }
+
+  //Edith
+  configurar(usuarioModel: UsuarioModel){
+    
+    return this.http.post<any>(this.dominio, usuarioModel)
+  }
+
+  obtenerUsuarioPorId(id: number) {
+    const url = `${this.dominio}/${id}`; 
+    return this.http.get<UsuarioModel>(url);
+  }
+  
+  subirImagen(formData: FormData) {
+    return this.http.post('https://localhost:7167/api/Usuario/UploadImage', formData);
+  }
 }

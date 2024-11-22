@@ -19,7 +19,7 @@ export const routes: Routes = [
     {path: "espacios", component: EspaciosComponent},
     {path: "nueva_reserva", component: NuevaReservaComponent},
     {path: "register", component: RegisterComponent},
-    {path: "configuracion", component: ConfigurationComponent},
+    {path: "configuracion/:id", component: ConfigurationComponent},
    
     {path: "", redirectTo: "login", pathMatch: "full"},
     {
