@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ReservaEmpleadoDetalle } from '../../models/reserva-empleado-detalle';
 import { ReservaService } from '../../services/reserva.service';
 import { FiltrosReservaModel } from '../../models/filtros-reserva-model';
+//import { FormGroup } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-reserva-empleado-detalle',
@@ -10,18 +12,22 @@ import { FiltrosReservaModel } from '../../models/filtros-reserva-model';
   styleUrl: './reserva-empleado-detalle.component.css'
 })
 export class ReservaEmpleadoDetalleComponent  implements OnInit {
+  datepipe: DatePipe = new DatePipe('en-US')
+  fecha_actual = this.datepipe.transform(new Date(),'yyyy-MM-dd')
+
   reservasEmpleado: ReservaEmpleadoDetalle[] = []
   empleadoId: string = ""
   filtrosReservaModel: FiltrosReservaModel = {
-    fecha_inicio: "",
-    fecha_fin: "",
-    tipo: "",
+    fecha_inicio: this.fecha_actual,
+    fecha_fin: this.fecha_actual,
+    tipo: "0",
     empleadoId: ""
   }
 
   constructor(
     private  activedRoute: ActivatedRoute,
     private readonly reservaService: ReservaService
+    //private formGroup: FormGroup
   ){}
 
   listar(){
@@ -46,7 +52,7 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
 
 
   ngOnInit(): void {
-
+    //this.cargaInicial()
     this.listar()
 
     /*
@@ -62,5 +68,15 @@ export class ReservaEmpleadoDetalleComponent  implements OnInit {
       }
     )
 */
+  }
+
+  cargaInicial(): void {
+    
+    
+    //const fechaActual = new Date();
+    
+    //this.filtrosReservaModel.fecha_inicio = fechaActual.getDate().toString();
+    
+    //this.filtrosReservaModel.fecha_fin = fechaActual.getDate().toString();
   }
 }
