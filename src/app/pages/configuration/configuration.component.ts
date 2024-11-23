@@ -111,7 +111,27 @@ export class ConfigurationComponent implements OnInit {
 
   onSubmit(): void {
     if (this.profileForm.valid) {
-      console.log('Datos del formulario:', this.profileForm.value);
+
+
+      const usuarioData: UsuarioModel = {
+        ...this.usuarioModel,
+        ...this.profileForm.value,
+        email: this.profileForm.get('correo')?.value
+      };
+
+console.log("dato.")
+      console.log(usuarioData)
+
+      this.usuarioService.configurar(usuarioData).subscribe({
+        next: (response) => {
+          alert('Datos guardados exitosamente.');
+          console.log('Respuesta del servidor:', response);
+        },
+        error: (err) => {
+          console.error('Error al guardar los datos:', err);
+          alert('Error al guardar los datos.');
+        }
+      });
     } else {
       alert('Por favor completa todos los campos correctamente');
     }
