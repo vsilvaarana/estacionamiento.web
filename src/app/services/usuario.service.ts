@@ -28,9 +28,9 @@ export class UsuarioService {
     return this.http.get<UsuarioModel>(url);
   }
 
-  subirImagen(formData: FormData) {
-    return this.http.post('https://localhost:7167/api/Usuario/UploadImage', formData);
-  }
+  //subirImagen(formData: FormData) {
+    //return this.http.post('https://localhost:7167/api/Usuario/UploadImage', formData);
+  //}
 
   validarLogin(credenciales: { email: string; password: string }) {
     const url = `${this.dominio}/Login`;

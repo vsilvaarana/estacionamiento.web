@@ -90,7 +90,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   uploadImage(): void {
-    if (this.selectedFile) {
+    /*if (this.selectedFile) {
       const formData = new FormData();
       formData.append('file', this.selectedFile);
 
@@ -106,7 +106,7 @@ export class ConfigurationComponent implements OnInit {
       });
     } else {
       alert('Por favor selecciona una imagen antes de subir.');
-    }
+    }*/
   }
 
   onSubmit(): void {
@@ -124,8 +124,10 @@ console.log("dato.")
 
       this.usuarioService.configurar(usuarioData).subscribe({
         next: (response) => {
-          alert('Datos guardados exitosamente.');
           console.log('Respuesta del servidor:', response);
+          alert('Datos guardados exitosamente.');
+          this.router.navigate(["/home"]); // Redirige al login
+
         },
         error: (err) => {
           console.error('Error al guardar los datos:', err);
