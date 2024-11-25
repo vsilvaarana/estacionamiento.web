@@ -31,4 +31,9 @@ export class UsuarioService {
   subirImagen(formData: FormData) {
     return this.http.post('https://localhost:7167/api/Usuario/UploadImage', formData);
   }
+
+  validarLogin(credenciales: { email: string; password: string }) {
+    const url = `${this.dominio}/Login`;
+    return this.http.post<{ token: string; success: boolean, name: string }>(url, credenciales);
+  }
 }
