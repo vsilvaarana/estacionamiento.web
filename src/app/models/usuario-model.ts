@@ -7,4 +7,6 @@ export interface UsuarioModel {
     marca:string;
     placa:string;
     password:string;
+    correo?:string;
+    usuarioId?:number;
 }

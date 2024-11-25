@@ -1,1 +1,74 @@
-<p>reserva-rapida works!</p>
+   
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar" >
+                <app-menu></app-menu>
+            </nav>
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h2>Reserva Rapida</h2>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button class="btn btn-sm btn-outline-secondary">Log out</button>
+                    </div>
+                </div>
+            </div>
+             
+            <div class="row">
+                
+                <div class="col-md-9" style=" margin-bottom: 150px">
+                    <div>
+                        <div class="row col-md-9">
+                            <h2> Estacionamiento Disponible</h2>
+                            <div class="col-md-6">
+                                <p> Piso: {{estacionamientoModel.piso}}</p>
+                                <p> Espacio: {{estacionamientoModel.espacio}}</p>
+                            </div>
+                         <!--   
+                            <img src="assets/img/estacionamiento2.jpg" alt="estacionamiento" class="col-md-10"  >
+                            -->
+                        </div>
+                            
+                        <div class="row col-md-9"  >
+                            <h2> Datos de la Reserva</h2>
+                            <div class="col-md-6">
+                                <p>Usuario: {{usuarioModel.nombre}} {{usuarioModel.apellido}}</p>
+                                <p>Correo: {{usuarioModel.correo}}</p>
+                                <p class="card-text">Placa: {{usuarioModel.placa}}</p>
+                                                                        
+                                 <p class="card-text"> Fecha de Reserva : {{fecha_actual}}</p>                                                        
+                            
+                                <script>
+                                    function mostrarFecha() {
+                                        const fecha = document.getElementById('fechaSeleccionada').value;
+                                        document.getElementById('resultado').textContent = "Fecha seleccionada: " + fecha;
+                                    }
+                                </script>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <img src="assets/img/auto1.jpg" alt="auto" class="img-fluid" style="border-radius: 10px;">
+                            </div>
+                            <p> </p>
+                            
+                        </div>
+                        <button class="btn btn-sm btn-primary col-md-3" (click)="reservar()" >Reservar</button>
+                    </div>
+                </div>                                         
+                <div class="col-md-3" >
+                    <div>
+                        <div class="card">
+                                <div class="card-body">
+                                    <img src="assets/img/entelchica.jpg" alt="chica entel" class="img-fluid" style="max-height: 900px; width: auto;"  >
+                                </div>                             
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        </div>
+    </div>
+    
+
+

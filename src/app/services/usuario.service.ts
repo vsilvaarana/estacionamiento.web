@@ -23,7 +23,8 @@ export class UsuarioService {
   }
 
   obtenerUsuarioPorId(id: number) {
-    const url = `${this.dominio}/${id}`; 
+    const url = `${this.dominio}?id=${id}`; 
+    console.log(url);
     return this.http.get<UsuarioModel>(url);
   }
 

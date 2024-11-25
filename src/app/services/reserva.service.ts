@@ -3,13 +3,14 @@ import { ReservaEmpleadoDetalle } from '../models/reserva-empleado-detalle';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FiltrosReservaModel } from '../models/filtros-reserva-model';
+import { ReservaModel } from '../models/reserva-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservaService {
   reservasEmpleado: ReservaEmpleadoDetalle[] =[]
-  dominio: string = "https://localhost:7167/api/Reserva/"
+  dominio: string = "https://localhost:7167/api/Reserva"
 
   constructor(
     private readonly http: HttpClient
@@ -18,13 +19,17 @@ export class ReservaService {
   //: Observable<ReservaEmpleadoDetalle[]> 
   obtenerReservasUsuario(reserva: FiltrosReservaModel){
     //return of(this.reservasEmpleado)
-    var url = this.dominio + "ListarPorUsuario?usuarioId=" +  reserva.empleadoId + "&fechainicio=" + reserva.fecha_inicio + "&fechafin=" + reserva.fecha_fin + "&tipo=" + reserva.tipo
+    var url = this.dominio + "/ListarPorUsuario?usuarioId=" +  reserva.empleadoId + "&fechainicio=" + reserva.fecha_inicio + "&fechafin=" + reserva.fecha_fin + "&tipo=" + reserva.tipo
     
     console.log(url)
     return this.http.get(url, {responseType: "json"})
   }
 
-
+  registrar(reservaModel: ReservaModel){
+    console.log(this.dominio)
+    console.log(reservaModel)
+    return this.http.post<number>(this.dominio, reservaModel)
+  }
 
 }
 
