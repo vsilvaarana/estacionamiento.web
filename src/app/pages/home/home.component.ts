@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { SharedModule } from "../../shared/shared.module";
 import * as echarts from 'echarts';
+import { Router } from '@angular/router';
+import { ReservaService } from '../../services/reserva.service';
+import { FiltrosReservaModel } from '../../models/filtros-reserva-model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +12,55 @@ import * as echarts from 'echarts';
   styleUrls: ['./home.component.css'],
   standalone: true,
   imports: [SharedModule],
-  
+  providers: [DatePipe] 
 })
 export class HomeComponent {;
   private chart1: echarts.ECharts | null = null;
   private chart2: echarts.ECharts | null = null;
+  public username: string | null = null;
+  public currentDate: string | null = null; 
 
-  ngAfterViewInit(): void {
+  filtrosReservaModel: FiltrosReservaModel = {
+    fecha_inicio: "2024-11-24 00:00:00.000",
+    fecha_fin: "2024-11-25 00:00:00.000",
+    tipo: "1",
+    empleadoId: "1"
+  }
+
+  constructor(
+    private router: Router,
+    private readonly reservaService: ReservaService,
+    private datePipe: DatePipe
+  ) {}
+
+  ngOnInit(): void {
+    let token = localStorage.getItem("authToken");
+    if(!token){
+      this.router.navigate(["/login"]);
+    }
+    this.username = localStorage.getItem("userName");
+  }
+
+  async ngAfterViewInit() {
+    const now = new Date();
+    this.currentDate = this.datePipe.transform(now, 'yyyy-MM-dd HH:mm:ss.SSS');
+
+    const rest = await this.reservaService.obtenerReservasUsuario(this.filtrosReservaModel).toPromise();
+    
+    let terminateCount = 0;
+    let currentCount = 0;
+
+    if(rest && Array.isArray(rest)){
+      rest.forEach((element: any) => {
+        const transformedDate = this.datePipe.transform(new Date(element.fecha), 'yyyy-MM-dd HH:mm:ss.SSS');
+        if (this.currentDate && transformedDate && transformedDate >= this.currentDate) {
+          currentCount++;
+        } else {
+          terminateCount++;
+        }
+      });
+    }
+
     const dom1 = document.getElementById('chart-container1');
     if (dom1) {
       this.chart1 = echarts.init(dom1, null, {
@@ -51,10 +97,10 @@ export class HomeComponent {;
               show: false,
             },
             data: [
-              { value: 3, name: 'Vigentes',itemStyle: {
+              { value: currentCount, name: 'Vigentes',itemStyle: {
                 color: '#4caf50',
               }, },
-              { value: 30, name: 'Concluidos',itemStyle: {
+              { value: terminateCount, name: 'Concluidos',itemStyle: {
                 color: '#f44336',
               }, },
             ],
@@ -128,6 +174,11 @@ export class HomeComponent {;
       this.chart2.dispose();
       this.chart2 = null;
     }
+  }
+
+  logout(){
+    localStorage.removeItem("authToken");
+    this.router.navigate(["/login"]);
   }
   
 }
