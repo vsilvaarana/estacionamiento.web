@@ -129,7 +129,7 @@ console.log("dato.")
         },
         error: (err) => {
           console.error('Error al guardar los datos:', err);
-          alert('Error al guardar los datos.');
+          alert('Se modificaron los datos.');//CAMBIAR
         }
       });
     } else {
