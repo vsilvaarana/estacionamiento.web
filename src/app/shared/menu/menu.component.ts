@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+  public username: string | null = null;
 
+  ngOnInit(): void {
+    this.username = localStorage.getItem("userName");
+  }
 }
