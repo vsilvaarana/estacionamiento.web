@@ -3,7 +3,9 @@
         <thead class="table-dark" style="background-color: green">
             <tr>
                 <th scope="col" class="col-2">Id</th>
+                <th scope="col" class="col-2">Piso</th>
                 <th scope="col" class="col-2">Espacio</th>
+                <th scope="col" class="col-2">Modelo</th>
                 <th scope="col" class="col-2">Placa</th>
                 <th scope="col" class="col-3">Fecha</th>
                 <th scope="col" class="col-3">Estado</th>
@@ -11,11 +13,16 @@
         </thead>
         <tbody class="table-group-divider">
           <tr *ngFor="let reservasEmpleado of reservasEmpleado">
-            <td>{{reservasEmpleado.reservaid}}</td>
+            <td>{{reservasEmpleado.reservaId}}</td>
+            <td>{{reservasEmpleado.piso}}</td>
             <td>{{reservasEmpleado.espacio}}</td>
+            <td>{{reservasEmpleado.modelo}}</td>
             <td>{{reservasEmpleado.placa}}</td>
-            <td>{{reservasEmpleado.fecha}}</td>
-            <td>{{reservasEmpleado.estado}}</td>
+            <td>{{reservasEmpleado.fecha | date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <span *ngIf='reservasEmpleado.estado =="1"' class="btn btn-success"> Vigente </span>
+              <span *ngIf='reservasEmpleado.estado =="2"' class="btn btn-warning"> Concluido </span>                   
+            </td>
           </tr>
         </tbody>
       </table>

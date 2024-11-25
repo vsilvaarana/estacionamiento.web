@@ -25,3 +25,16 @@
     height: auto;
 }
 
+#chart-container1 {
+    position: relative;
+    height: 30vh;
+    width: 500px;
+    overflow: hidden;
+  }
+
+  #chart-container2 {
+    position: relative;
+    height: 40vh;
+    width: 500px;
+    overflow: hidden;
+  }

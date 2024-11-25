@@ -17,9 +17,6 @@ export class NuevaReservaComponent {
     private fb: FormBuilder,
 
     private router: Router
-
-    
-
   ) {}
 
     __onReservar(){
